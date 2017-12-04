@@ -1,0 +1,32 @@
+Chapter4. BEYOND CLASSICAAL SEARCH
+==================================
+4.1 Local Search Algorithms and Optimization Problems
+---------------------------------
+---------------------------------
+### 4.1.1 Hill-climbing search
+continually moves in the direction of increasing value.
+typically choose randomly among the set of best successors if there is more than one.
++ steepest-ascent
++ greedy local search
++ hill climbing often gets stuck for the following reasons:
+    + **Local maxima**:
+    + **Ridges**:
+    + **Plateaux**:
++ sideways move
++ variants
+    + **stochastic hill climbing**
+    + **first-choice hill climbing**
+    + **random-restart hill climbing**
+### 4.1.2 Simulated annealing
++ A hill-climbing algorithm that never makes "downhill" is guaranteed to be incomplete
++ accepts the movve with some probability less than 1
+    + the probability decreases exponentially with the badness of the move
+    + the probability also decreases as the temperature T goes down
+### 4.1.3 Local beam search
+keeps track of *k* states rather than just one
++ *In a local beam search, useful information is passed among the paralled search threads.*
++ stochastic beam seaerch: choose *k* successors at random
+### 4.1.4 Genetic algorithms
++ fitness function
++ crossover
++ mutation
