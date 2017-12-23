@@ -88,3 +88,11 @@ queueing
     dynamic host configuration protocol 自动分配IP地址
     + first-hop router = default gateway
     + DHCP protocol的four-step process
+        + DHCP server discovery **DHCP discover message**
+        + DHCP server offer **DHCP offer message** 同个子网可能有多个DHCP server
+        + DHCP request **DHCP request message**
+        + DHCP message **DHCP ACK**
+### 4.3.4 Network Address Translation(NAT)
++ private network
+    + 10.0.0.0/8 是三种保留的IP地址之一
+    + **NAT translation table** 让router知道该把外网的datagram传给哪个host
