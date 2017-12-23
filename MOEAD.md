@@ -12,6 +12,7 @@ MOEA/D
 ## Futher reading
 + approximate the PF by using a mathematical model [5]-[8]
 + cMOGA [40] Hisao
+------------------------
 ## 1. INTRODUCTION
 + dominate
 + decision(variable) Pspace
@@ -25,13 +26,19 @@ MOEA/D
 + A. **Weighted Sum** Approach [1]
 + B. **Tchebycheff** Approach [1]
 + C. **Boundary Intersection(BI)** Approach
+
 ## 3.THE FRAMEWORK OF MOEA/D
-+ A. General Framework
++ #### A. General Framework
     + neighborhood of the _i_ th subproblem
-+ B. Discussions
++ #### B. Discussions
     + Why a **Finite Number of Subproblems** are considered?
     + How **diversity** is Maintained?
     + **Matiing restriction** and role of T
-+ C. Variants of MOEA/D
++ #### C. Variants of MOEA/D
     + step 2.2 is not a must in MOEA/D
-    + EP is an option
+    + **EP** is an option
+## 4. COMPARISION WITH MOGLS
++ #### C. MOKP
+    + NP-hard
++ #### D. Implementations
++ #### 
