@@ -1,17 +1,32 @@
-MOEA/D
+<font color = lighblue>MOEA/D
 ==============
-## Conclusion
-+ **main idea**
-    approximation of the **PF** can be decomposed into a number of scalar objective optimization subproblems.
-+ **major motivation**
-    any information about these $g^{te}(x|\lambda,z^*)$ with weight vectors close to $\lambda^i$ should be helpful for optimizing $g^{te}(x|\lambda,z^*)$.
-+ which parts in MOEA/D need **problem-specific** method?
-    1. when generate initial population
-    2. when initialize referrence points
-    3. when improve y' using problem-specific repair/improvement heuristic
-## Futher reading
-+ approximate the PF by using a mathematical model [5]-[8]
-+ cMOGA [40] Hisao
+## **Main idea**
+>approximation of the **PF** can be decomposed into a number of scalar objective optimization subproblems.
++ Why This decompostion works? What's the mechanism?
+    + most important, because all of the algorithm is based on this theorm
+
+## **Question**
+    
+>For each Pareto optimal point $x^*$, there exists a weight vector $\lambda$ such that $x^*$ is the optimal solution of $g^{te}(x|\lambda,z^*)$ and each optimal solution of $g^{te}(x|\lambda,z^*)$ is a Pareto optimal solution.
++ is there a unique solution $x^*$ of $g^{te}(x|\lambda,z^*)$ for a given $\lambda$ and $z$? making $x^*$ = $Arg\{g^{te}(x|\lambda,z^*)\}$
++ **proof**
+    $x^*$ is a pareto optimal point, $\forall x \in \Omega ,\exists$ at least one $i$, $s.t$ $f_i(x^*) > f_i(x)$ we choose such $\lambda$ that $\max \limits_{1\leq j\leq m} \{\lambda_j| f_j(x) - z_j^*|\} = \lambda_i|f_i(x)-z_i^*|$ since $|f_i(x^*)-z_i^*| < |f_i(x)-z_i^*|$ $min\{g^{te}(x^*|\lambda,z^*)\} = \lambda_i|f_i(x^*)-z_i^*|$. thus $x^*$ is the optimal solution of  $g^{te}(x|\lambda,z^*)$.
+    + but this leading to another question
+    for different pair of $(x^*, x)$ the $i$ may be different, which means different $\lambda$. It seems that no unique $\lambda$ can hold for all condition for a given pareto optimal point $x^*$ 
+
+## **Major motivation**
+any information about these $g^{te}(x|\lambda,z^*)$ with weight vectors close to $\lambda^i$ should be helpful for optimizing $g^{te}(x|\lambda,z^*)$.
+
+## which parts in MOEA/D need **problem-specific** method?
+1. when generate initial population
+2. when initialize referrence points
+3. after generating **y'** using problem-specific repair/improvement heuristic
+## **plan description** of MOEA/D
++ every time we optimize N scalar subproblem
++ the **_ith_** subproblems was assgined with a $x^i$ and $\lambda^i$
++ **update among one neighbour**
++ for every subporblem, consider it's neighbour, generate a new child y from it and update all the solutions to subproblems belongs to this neighbour.
++ update **EP**
 ------------------------
 ## 1. INTRODUCTION
 + dominate
@@ -41,4 +56,9 @@ MOEA/D
 + #### C. MOKP
     + NP-hard
 + #### D. Implementations
-+ #### 
+## 5. COMPARISON WITH NSGA-II
++ objective normalization
+
+## Futher reading
++ approximate the PF by using a mathematical model [5]-[8]
++ cMOGA [40] Hisao
