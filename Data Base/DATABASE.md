@@ -1,5 +1,8 @@
 #数据库基础
 + SQL语法
+    + group by
+    + having
+    + count()
     + SQL对大小写不敏感
     + DML（数据操作语言
         + SELECT
