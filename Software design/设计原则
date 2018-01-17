@@ -1,0 +1,14 @@
+设计原则
+==========
+## Software Design Principles
+### Abstraction
+procedural abstraction / data abstraction
+### Modularity
+**coupling** the strength of the connections between modules
+**cohesion** the glue that keeps a module together
+### information hiding
+a principle for breaking a program into modules
+### limited complexity
+### hierarchical structure
+### KWIC(key word in contex)
+- 
