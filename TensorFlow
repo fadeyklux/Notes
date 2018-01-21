@@ -1,0 +1,42 @@
+Getting Started With TensorFlow
+==============================
+## Tensorflow Core tutorial
+- **what is a tensor**
+  A tensor consists of a set of primitive values shaped into an array of any number of dimensions
+- **tensor's rank**: number of dimensions
+```python
+[1., 2., 3.] # a rank 1 tenso, shape[3]
+[[1., 2., 3.], [4., 5., 6.]] # a rank 2 tensor, shape[2, 3]
+[[[1., 2., 3.], [[7., 8., 9.]]]] # a rank 3 tensor, shape[2, 1, 3
+```
+### Importing Tensorflow
+```python
+import tensorflow as tf
+```
+### The Computational Graph
+1. Building the computational graph
+2. Running the computational graph
+**placeholder**
+```python
+tf.constant()
+tf.Variable()
+tf.placeholder()
+tf.add()
+tf.squared()
+tf.reduce_sum()
+tf.assign()
+sess = tf.Session()
+sess.run()
+# explicitly call to initialize variables
+init = tf.global_variables_initializer()
+see.run(init)
+```
+## tf.train AP
+```python
+optimizer = tf.train.GradientDescentOptimizer
+train = optimizer.minimize()
+```
+## tf.estimato
+running training loops
+running evaluation loops
+managing data sets
