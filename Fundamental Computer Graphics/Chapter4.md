@@ -63,10 +63,33 @@ if no solution, either the traingle is degenerate or the ray is paralled to the 
 a surface facing directly toward the light receives maximum illumination
 a surface tangent to tht light direction recevies no illumination
 $L = k_dImax(0, \mathbf{n\cdot l} )$
-$L:$ pixel color $k_d$ diffuse coefficient 
-$I$ intensity of the light source
+$L:$ pixel color 
+$k_d$ diffuse coefficient 
+$I:$ intensity of the light source
+$\mathbf{l}:$ light direction
+$\mathbf{v}:$ view direction
 **this equation applies separately to the three color channels**
-### 4.5.2 Blinn-Phong Shading
+### 4.5.2 Blinn-Phong Shading   
 Lambertian Shading is _view independent_
-the color of a surface does not depend on the direction from which you look
+the color of a surface does not depend on the direction from which you 
+**shininess**, **producing highlights**, **specular reflections** appear to move around the view point changes
+$\mathbf{h} = \dfrac{\mathbf{v+l}}{\parallel \mathbf{v+l} \parallel} $
+$L = k_dI\max(0, \mathbf{n \cdot l}) + k_sI\max(0,\mathbf{n\cdot h})^p$
+$k_s:$ _specular coefficient_
+$p$: Phong exponent
+### 4.5.3 Ambient Shading
+$L = k_aI_a + k_dI\max(0, \mathbf{n \cdot l}) + k_sI\max(0,\mathbf{n\cdot h})^p$
+$k_a:$ surface's ambient coefficient/ ambient color
+$I_a:$ ambient light intensity
+### 4.5.4 Multiple Point Lights
+simple shading model can easily be extended to handle _N_ light sources
+$L = k_aI_a + \sum_{i=1}^{N}[k_dI\max(0, \mathbf{n \cdot l}) + k_sI\max(0,\mathbf{n\cdot h})^p]$
 
+----------------------------
+## 4.6 A Ray-Tracing 
+## 4.7 Shadows
+## 4.8 Ideal Specular Reflection
+_mirror reflection_
+some energy is lost when the light reflects from the surface, and this loss can be different for different colors
+$color c = c + k_mraycolor(\mathbf{p}+sr, \epsilon, \infty)$
+$k_m:$ specular RGB color
